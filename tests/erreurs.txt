@@ -1,0 +1,11 @@
+# Tests d'erreur – une expression invalide par ligne, suivie d'un commentaire
+# Le programme doit afficher un message d'erreur et renvoyer un code non nul.
+(ab ; parenthèse ouvrante jamais fermée
+ab) ; parenthèse fermante en trop
+*a ; opérateur postfixé sans opérande
+a||b ; deux unions consécutives
+() ; parenthèses vides
+|a ; union sans opérande gauche
+a( ; parenthèse ouverte en fin d'expression
+a| ; union sans opérande droit
+a-b ; caractère hors de l'alphabet

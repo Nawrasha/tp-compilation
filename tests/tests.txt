@@ -1,0 +1,24 @@
+# Jeu de tests – format : expression ; mots acceptés ; mots rejetés
+# (mots séparés par des espaces, @ pour le mot vide, champ vide autorisé)
+
+# ----- expressions imposées par l'énoncé -----
+a ; a ; b aa
+a|b ; a b ; ab
+ab* ; a abbb ; b aba
+(a|b)*abb ; abb aabb babb ; ab abba @
+(ab)+ ; ab abab ; aba
+a?b ; b ab ; a aab
+(a*)* ; a aaa @ ; b
+a(b|c)*d ; ad abcbd ; a abc
+@ ; @ ; a
+
+# ----- trois expressions inventées (cas limites, justifiés dans le rapport) -----
+a*+? ; @ a aaa ; b ab
+(a|@)(b|@) ; @ a b ab ; ba aa bb
+((((a)))) ; a ; @ aa
+
+# ----- expressions supplémentaires -----
+a|b|c ; a b c ; ab @
+(((a*)*)*) ; @ a aaaa ; b
+A0|z9 ; A0 z9 ; a0 Z9 A
+(ab|a)*b ; b ab aab abab ; @ a ba
